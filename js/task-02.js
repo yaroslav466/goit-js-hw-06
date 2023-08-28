@@ -8,14 +8,16 @@ const ingredients = [
 ];
 
 function handleMarkup(ingredients) {
-  const ul = document.querySelector('#ingredients');
-  const liElements = [];
-  ingredients.map( ingredient => {
+  const ulEl = document.querySelector('#ingredients');
+
+ const ingMap = ingredients.map( ingredient => {
     const liEl = document.createElement("li");
     liEl.classList.add("item")
-    liEl.textContent = ingredient;
-    liElements.push(liEl);
+    liEl.textContent = ingredient ;
+    return liEl;
   });
-  ul.append(...liElements);
+  ulEl.append(...ingMap);
 }
 handleMarkup(ingredients);
+
+

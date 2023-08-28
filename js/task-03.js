@@ -13,14 +13,14 @@ const images = [
   },
 ];
 
+
 function gallery(arr) {
-  const ul = document.querySelector(".gallery");
+  const ulEl = document.querySelector(".gallery");
 
-  const img = arr.map((item) => `<li> <img src="${item.url}" alt="${item.url}" </li>`).join("");
+  const imgEl = arr.map((item) => `<li> <img src="${item.url}" alt="${item.url}" width="200"> </li>`).join("");
 
-  ul.style.listStyle = "none";
-   ul.insertAdjacentHTML("afterbegin", img); 
-   const li = document.querySelectorAll("li");
-    li.forEach(item => item.classList.add("item-img"));
+  ulEl.style.listStyle = "none";
+   ulEl.insertAdjacentHTML("afterbegin", imgEl); 
+ 
 }
 gallery(images);
